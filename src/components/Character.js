@@ -4,6 +4,7 @@ const Character = ({ character }) => {
   return (
     <div>
       {character.name}
+      <img src={character.thumb}/>
     </div>
   )
 }
