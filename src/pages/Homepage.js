@@ -21,7 +21,7 @@ const Homepage = () => {
     }
 
     const getCharacterData = async () => {
-        const res = await axios.get(`brianhong.xyz/sorapi/characters/cid`);
+        const res = await axios.get(`brianhong.xyz/sorapi/characters?limit=89`);
         return res;
     }
 
