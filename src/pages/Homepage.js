@@ -21,7 +21,7 @@ const Homepage = () => {
     }
 
     const getCharacterData = async () => {
-        const res = await axios.get(`brianhong.xyz/sorapi/characters/${i}`);
+        const res = await axios.get(`brianhong.xyz/sorapi/characters/cid`);
         return res;
     }
 
@@ -47,3 +47,12 @@ const Homepage = () => {
 }
 
 export default Homepage;
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button').forEach(function(button) {
+        button.onClick = function() {
+            document.querySelector('#main').img.src = button.dataset.img;
+        }
+    });
+});
