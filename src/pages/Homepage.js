@@ -37,7 +37,7 @@ const Homepage = () => {
                 <Row>
                     {character.map(cid => (
                         <Col key={cid.data.name} xs={12} sm={12} md={4} lg={3} xl={3}>
-                            <Character character={cid.data}/>
+                            <button><Character character={cid.data}/></button>
                         </Col>
                     ))}
                 </Row>
