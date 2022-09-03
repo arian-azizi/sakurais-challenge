@@ -11,6 +11,11 @@ const Homepage = () => {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const checkLogin = () => {
+        const token = localStorage.getItem('u');
+        
+    }
+
     const getAllCharacterData = async () => {
         setLoading(true);
         const res = await axios.get(`https://brianhong.xyz/sorapi/characters?limit=89`);
