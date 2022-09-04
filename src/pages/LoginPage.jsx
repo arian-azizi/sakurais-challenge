@@ -3,7 +3,7 @@ import { response } from 'express';
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const SignupForm = () => {
+const LoginPage = () => {
 
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
@@ -37,4 +37,4 @@ const SignupForm = () => {
   )
 }
 
-export default Loginpage
+export default LoginPage

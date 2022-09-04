@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 
 // Components
 import Character from '../components/Character';
+import { application } from 'express';
 
-const Homepage = () => {
+const HomePage = () => {
 
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -55,4 +56,4 @@ const Homepage = () => {
     );
 }
 
-export default Homepage;
+export default HomePage;
