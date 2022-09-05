@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 // Components
 import Character from '../components/Character';
-import { application } from 'express';
 
 const HomePage = () => {
 
