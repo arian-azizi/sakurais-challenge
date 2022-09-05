@@ -5,11 +5,15 @@ import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
 
+    const navigate = useNavigate();
+
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
 
     const tryLogin = (event) => {
 
+        
+        
         event.preventDefault();
 
         axios.post('https://brianhong.xyz/sorapi/login', {
@@ -21,7 +25,7 @@ const LoginPage = () => {
             alert('Error');
         } else {
             localStorage.setItem('u', response.data.UID);
-            useNavigate('/');
+            navigate('/');
         }
     }
 
