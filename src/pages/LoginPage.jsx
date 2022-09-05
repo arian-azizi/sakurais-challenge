@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { response } from 'express';
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -19,14 +18,14 @@ const LoginPage = () => {
         axios.post('https://brianhong.xyz/sorapi/login', {
             username: user,
             password: password,
-        })
-
-        if (response.data.error) {
-            alert('Error');
-        } else {
-            localStorage.setItem('u', response.data.UID);
-            navigate('/');
-        }
+        }).then(response => {    
+            if (response.data.error) {
+                alert(response.data.error);
+            } else {
+                localStorage.setItem('u', response.data.UID);
+                navigate('/');
+            }
+        }).catch(error => alert(error))
     }
 
     return (
