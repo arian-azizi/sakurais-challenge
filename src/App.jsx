@@ -1,10 +1,13 @@
 import { Container } from 'react-bootstrap';
+
+// Pages
 import HomePage from './pages/HomePage';
+import CharacterPage from './pages/CharacterPage';
 
 function App() {
   return (
     <Container>
-      <div>Dunkey Kang</div>
+      <div>Join the Smash Challenge!</div>
       <HomePage />
     </Container>
   );
