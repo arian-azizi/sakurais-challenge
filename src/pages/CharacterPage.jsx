@@ -7,7 +7,7 @@ import Character from '../components/Character';
 
 const CharacterPage = () => {
     
-    const cid = useParams();
+    const { cid } = useParams();
     const [character, setCharacter] = useState();
     const [loading, setLoading] = useState(true);
     
