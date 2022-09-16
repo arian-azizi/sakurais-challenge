@@ -39,12 +39,30 @@ const CharacterPage = () => {
             ) : (
                 <Row>
                     <Col>
-                        <Card to={'/character/' + character.CID}>
+                        <Card>
                             <Link to={'/character/' + character.CID}>
-                                <Card.Img src={Character.thumb}/>
-                                <Character character={character}/>
+                                <Card.Body>
+                                    <Character character={character}/>
+                                </Card.Body>
                             </Link>
                         </Card>  
+                    </Col>
+                    <Col>
+                        <Card>
+                            <Card.Body>
+                                {character.bronzeConditions}
+                            </Card.Body>
+                        </Card>
+                        <Card>
+                            <Card.Body>
+                                {character.silverConditions}
+                            </Card.Body>
+                        </Card>
+                        <Card>
+                            <Card.Body>
+                                {character.goldConditions}
+                            </Card.Body>
+                        </Card>
                     </Col>
                 </Row>
             )}
