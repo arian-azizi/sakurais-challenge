@@ -13,7 +13,7 @@ const HomePage = () => {
 
     const checkLogin = () => {
         const token = localStorage.getItem('u');
-        
+        //what to do with token...
     }
 
     const getAllCharacterData = async () => {
