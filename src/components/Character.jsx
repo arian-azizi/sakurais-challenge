@@ -1,11 +1,11 @@
 import React from 'react';
+import '../index.css';
 
 const Character = ({ character }) => {
   return (
     <div>
-      {character.name}
-      <img src={character.thumb}/>
-      {character.desc}
+      {character.id}
+      <img src={character.thumb} class='character-img'/>
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Row, Col, Card, Badge, Accordion } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
 import Character from '../components/Character';
+import Medal_Score from '../components/Medal_Score';
 
 const CharacterPage = () => {
     
@@ -14,7 +15,7 @@ const CharacterPage = () => {
     
     const getCharacterData = async () => {
         setLoading(true);
-        const res = await axios.post(`https://brianhong.xyz/sorapi/characters/${cid}/${token}`);
+        const res = await axios.get(`https://brianhong.xyz/sorapi/characters/${cid}/${token}`);
         if (res.data) {
             if (res.data.error) {
                 alert(res.data.error);
@@ -41,38 +42,30 @@ const CharacterPage = () => {
                 <Row>
                     <Col>
                         <Card>
-                            <Link to={'/character/' + character.CID}>
-                                <Card.Body>
-                                    <Character character={character}/>
-                                </Card.Body>
-                            </Link>
+                            <Card.Body>
+                                <Character character={character}/>
+                            </Card.Body>
                         </Card>  
                     </Col>
                     <Col>
                         <Card>
                             <Card.Body>
-                                {character.bronzeConditions}
-                                <form>
-                                    <input type="checkbox"/>
-                                </form>
+                                <Card.Title>{character.name} <Badge bg="secondary">Incomplete</Badge> </Card.Title>
+                                <Card.Text>
+                                    {character.desc}
+                                </Card.Text>
+                                <Card.Footer>
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey="0">
+                                            <Accordion.Header>Related Characters</Accordion.Header>
+                                            <Accordion.Body>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
+                                </Card.Footer>
                             </Card.Body>
                         </Card>
-                        <Card>
-                            <Card.Body>
-                                {character.silverConditions}
-                                <form>
-                                    <input type="checkbox" disabled/>
-                                </form>
-                            </Card.Body>
-                        </Card>
-                        <Card>
-                            <Card.Body>
-                                {character.goldConditions}
-                                <form>
-                                    <input type="checkbox" disabled/>
-                                </form>
-                            </Card.Body>
-                        </Card>
+                        <Medal_Score/>
                     </Col>
                 </Row>
             )}

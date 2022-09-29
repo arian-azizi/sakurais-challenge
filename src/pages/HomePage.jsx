@@ -41,15 +41,17 @@ const HomePage = () => {
             {loading ? (
                 <h1>Loading...</h1>
             ) : (
-                <Row>
-                    {characters.map(character => (
-                        <Col key={character.name} xs={12} sm={12} md={4} lg={3} xl={3}>
-                            <Link to={'/character/' + character.CID}>
-                                <Character character={character}/>
-                            </Link>  
-                        </Col>
-                    ))}
-                </Row>
+                <div>
+                    <Row>
+                        {characters.map(character => (
+                            <Col key={character.name} xs={12} sm={12} md={4} lg={3} xl={3}>
+                                <Link to={'/character/' + character.CID}>
+                                    <Character character={character}/>
+                                </Link>  
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
             )}
         </>
     );
